@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_image_game/Theme/font.dart';
 import 'package:flutter_image_game/Pages/CardPage.dart';
