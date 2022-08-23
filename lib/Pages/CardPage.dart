@@ -7,27 +7,28 @@ import 'package:flutter_image_game/Pages/CardList.dart';
 import 'package:wrapped_korean_text/wrapped_korean_text.dart';
 
 class CardPage extends StatefulWidget {
-  const CardPage({Key? key, required this.cardCount, required this.cardContent})
+  const CardPage(
+      {Key? key, required this.cardCount, required this.cardCategory})
       : super(key: key);
   final int cardCount;
-  final String cardContent;
+  final String cardCategory;
 
-  State<CardPage> createState() =>
-      _CardPageState(cardCount: this.cardCount, cardContent: this.cardContent);
+  State<CardPage> createState() => _CardPageState(
+      cardCount: this.cardCount, cardCategory: this.cardCategory);
 }
 
 class _CardPageState extends State<CardPage> {
   _CardPageState(
-      {Key? key, required this.cardCount, required this.cardContent});
+      {Key? key, required this.cardCount, required this.cardCategory});
 
   final AppinioSwiperController controller = AppinioSwiperController();
   late int cardCount;
-  late String cardContent;
+  late String cardCategory;
 
-  late List<Widget> cards = setDeck(cardContent);
+  late List<Widget> cards = setDeck(cardCategory);
 
-  List<Widget> setDeck(String cardContext) {
-    if (cardContext == '교회') {
+  List<Widget> setDeck(String cardCategory) {
+    if (cardCategory == '교회') {
       return MeetInChurch;
     } else
       return Break_It_1;

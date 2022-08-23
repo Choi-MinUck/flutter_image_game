@@ -5,23 +5,23 @@ import 'package:flutter_image_game/Theme/font.dart';
 
 class CountdownPage extends StatefulWidget {
   const CountdownPage(
-      {Key? key, required this.cardCount, required this.cardContent})
+      {Key? key, required this.cardCount, required this.cardCategory})
       : super(key: key);
 
   final int cardCount;
-  final String cardContent;
+  final String cardCategory;
 
   @override
   State<CountdownPage> createState() => _countdownPageState(
-      cardCount: this.cardCount, cardContent: this.cardContent);
+      cardCount: this.cardCount, cardCategory: this.cardCategory);
 }
 
 class _countdownPageState extends State<CountdownPage> {
   _countdownPageState(
-      {Key? key, required this.cardCount, required this.cardContent});
+      {Key? key, required this.cardCount, required this.cardCategory});
 
   final int cardCount;
-  final String cardContent;
+  final String cardCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _countdownPageState extends State<CountdownPage> {
                 MaterialPageRoute(
                     builder: (context) => CardPage(
                           cardCount: this.cardCount,
-                          cardContent: this.cardContent,
+                          cardCategory: this.cardCategory,
                         )));
           },
         ),

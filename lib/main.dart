@@ -30,12 +30,12 @@ class MyHome extends StatefulWidget {
 
 class _MyHomeState extends State<MyHome> {
   List<MyHomePageDeckButton> homePageDeckList = [
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '전체'),
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '랜덤'),
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '연애'),
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '연애2'),
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '교회'),
-    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '과거'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '전체'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '랜덤'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '연애'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '연애2'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '교회'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardCategory: '과거'),
   ];
 
   @override
@@ -71,14 +71,15 @@ class _MyHomeState extends State<MyHome> {
 
 class MyHomePageDeckButton {
   const MyHomePageDeckButton(
-      {required this.cardName, required this.cardContent});
+      {required this.cardName, required this.cardCategory});
 
   final String cardName;
-  final String cardContent;
+  final String cardCategory;
 }
 
 class homePageDeckButton1 extends StatelessWidget {
   homePageDeckButton1({Key? key, required this.cardButton}) : super(key: key);
+
   final MyHomePageDeckButton cardButton;
 
   @override
@@ -100,19 +101,25 @@ class homePageDeckButton1 extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => GameSetPage(
-                                    cardContent: cardButton.cardContent,
+                                    cardCategory: cardButton.cardCategory,
                                   )),
                         );
                       },
                     ),
                     fit: BoxFit.fill),
-                Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    cardButton.cardContent,
-                    textAlign: TextAlign.center,
-                    style: homePageDeck(),
-                  ),
+                Column(
+                  children: [
+                    Expanded(
+                        flex: 4,
+                        child: Center(
+                          child: Text(
+                            cardButton.cardCategory,
+                            textAlign: TextAlign.center,
+                            style: homePageDeck(),
+                          ),
+                        )),
+                    Expanded(flex: 3, child: Container())
+                  ],
                 ),
               ],
             ),

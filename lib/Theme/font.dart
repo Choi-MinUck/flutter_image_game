@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 TextStyle homePageDeck() {
   return TextStyle(
-    fontSize: 20,
+    fontSize: 30,
     fontFamily: 'Cafe24Ohsquare',
     fontWeight: FontWeight.w700,
-    height: 30 / 20,
+    height: 45 / 30,
     color: Color(0xffFFFFFF),
   );
 }
