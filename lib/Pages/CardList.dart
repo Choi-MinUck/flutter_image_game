@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_game/Pages/CardPage.dart';
 
+//브레이-킷 1탄
 List<Widget> Break_It_1 = [
   CardDeckButton3('card', '엄마 몰래 김치찌개에 있는 돼지고기만 건져먹을 거 같은 사람'),
   CardDeckButton3('card', '여사친, 남사친 깻잎 떼줄것 같은 사람'),
@@ -16,6 +17,7 @@ List<Widget> Break_It_1 = [
   CardDeckButton3('card', '랜덤게임에서 물 만난 물고기일 것 같은 사람'),
 ];
 
+//교회에서 만난 사이
 List<Widget> MeetInChurch = [
   CardDeckButton3('card', '찬양 부를 때 립싱크 할것 같은 사람'),
   CardDeckButton3('card', '기도회 때 기도하는 척하면서 잘 것 같은 사람'),
