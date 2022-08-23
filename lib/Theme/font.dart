@@ -29,3 +29,13 @@ TextStyle cardEndText() {
     color: Color(0xffFFFFFF),
   );
 }
+
+TextStyle cafe24w700White(double size, double height) {
+  return TextStyle(
+    fontSize: size,
+    fontFamily: 'Cafe24Ohsquare',
+    fontWeight: FontWeight.w700,
+    height: height / size,
+    color: Color(0xffFFFFFF),
+  );
+}

@@ -29,7 +29,19 @@ class _CardPageState extends State<CardPage> {
       body: Column(
         children: [
           const SizedBox(
-            height: 50,
+            height: 10,
+          ),
+          SizedBox(
+              height: 35, child: Image.asset('assets/images/exitButton.png')),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            '주제',
+            style: cafe24w700White(24, 36),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           Stack(
             children: [
@@ -45,9 +57,6 @@ class _CardPageState extends State<CardPage> {
                     ),
                   )),
             ],
-          ),
-          const SizedBox(
-            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

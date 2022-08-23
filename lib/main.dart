@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_image_game/Pages/GameSetPage.dart';
 import 'package:flutter_image_game/Theme/font.dart';
 import 'package:flutter_image_game/Pages/CardPage.dart';
 
@@ -36,8 +37,15 @@ class _MyHomeState extends State<MyHome> {
     });
   }
 
-  final MyHomePageDeckButton card1 =
-      new MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '전체');
+  List<MyHomePageDeckButton> homePageDeckList = [
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '전체'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '랜덤'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '연애'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '연애2'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '교회'),
+    MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '과거'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +63,12 @@ class _MyHomeState extends State<MyHome> {
                 crossAxisCount: 2,
                 childAspectRatio: 160 / 240,
                 children: <Widget>[
-                  homePageDeckButton1(cardButton: card1),
-                  homePageDeckButton('homePageDeck', '랜덤'),
-                  homePageDeckButton('homePageDeck', '연애'),
-                  homePageDeckButton('homePageDeck', '연애2'),
-                  homePageDeckButton('homePageDeck', '교회'),
-                  homePageDeckButton('homePageDeck', '과거'),
+                  homePageDeckButton1(cardButton: homePageDeckList[0]),
+                  homePageDeckButton1(cardButton: homePageDeckList[1]),
+                  homePageDeckButton1(cardButton: homePageDeckList[2]),
+                  homePageDeckButton1(cardButton: homePageDeckList[3]),
+                  homePageDeckButton1(cardButton: homePageDeckList[4]),
+                  homePageDeckButton1(cardButton: homePageDeckList[5]),
                 ],
               ),
             ),
@@ -135,7 +143,8 @@ class homePageDeckButton1 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => CardPage()),
+                          MaterialPageRoute(
+                              builder: (context) => GameSetPage()),
                         );
                       },
                     ),
@@ -154,5 +163,9 @@ class homePageDeckButton1 extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  MaterialPageRoute mpr(String str) {
+    return MaterialPageRoute(builder: (context) => CardPage());
   }
 }
