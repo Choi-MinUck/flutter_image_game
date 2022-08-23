@@ -29,14 +29,6 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  int currentPage = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      currentPage = index;
-    });
-  }
-
   List<MyHomePageDeckButton> homePageDeckList = [
     MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '전체'),
     MyHomePageDeckButton(cardName: 'homePageDeck', cardContent: '랜덤'),
@@ -75,43 +67,6 @@ class _MyHomeState extends State<MyHome> {
           ],
         ));
   }
-
-  Widget homePageDeckButton(String cardName, String cardContent) {
-    String cardPath = 'assets/images/${cardName}.png';
-    return Container(
-      child: Stack(
-        children: [
-          SizedBox(
-            width: 160,
-            height: 240,
-            child: Stack(
-              children: [
-                Ink.image(
-                    image: AssetImage(cardPath),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CardPage()),
-                        );
-                      },
-                    ),
-                    fit: BoxFit.fill),
-                Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    cardContent,
-                    textAlign: TextAlign.center,
-                    style: homePageDeck(),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
 
 class MyHomePageDeckButton {
@@ -144,7 +99,9 @@ class homePageDeckButton1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => GameSetPage()),
+                              builder: (context) => GameSetPage(
+                                    cardContent: cardButton.cardContent,
+                                  )),
                         );
                       },
                     ),
@@ -163,9 +120,5 @@ class homePageDeckButton1 extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  MaterialPageRoute mpr(String str) {
-    return MaterialPageRoute(builder: (context) => CardPage());
   }
 }

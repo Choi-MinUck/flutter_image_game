@@ -3,24 +3,34 @@ import 'package:flutter_image_game/Theme/font.dart';
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_image_game/main.dart';
+import 'package:flutter_image_game/Pages/CardList.dart';
 
 class CardPage extends StatefulWidget {
-  const CardPage({Key? key}) : super(key: key);
+  const CardPage({Key? key, required this.cardCount, required this.cardContent})
+      : super(key: key);
+  final int cardCount;
+  final String cardContent;
 
-  State<CardPage> createState() => _CardPageState();
+  State<CardPage> createState() =>
+      _CardPageState(cardCount: this.cardCount, cardContent: this.cardContent);
 }
 
 class _CardPageState extends State<CardPage> {
-  final AppinioSwiperController controller = AppinioSwiperController();
+  _CardPageState(
+      {Key? key, required this.cardCount, required this.cardContent});
 
-  List<Widget> cards = [
-    CardDeckButton3('card', '남들이 모르는 은밀한 취미를 즐길 것 같은 사람은?'),
-    CardDeckButton3('card', '다시 태어나면 고양이가 어울릴 것 같은 사람은?'),
-    CardDeckButton3('card', '무인도에 포류할 때 동료로 있으면 좋을 것 같은 사람은?'),
-    CardDeckButton3('card', '동성이랑 술 제일 안마실 것 같은 사람은?'),
-    CardDeckButton3('card', '남사친 , 여사친이랑 제일 친구 못할 것 같은 사람은?'),
-    CardDeckButton3('card', '내가 싸워서 이길 수 있을 것 같은 사람은?'),
-  ];
+  final AppinioSwiperController controller = AppinioSwiperController();
+  late int cardCount;
+  late String cardContent;
+
+  late List<Widget> cards = setDeck(cardContent);
+
+  List<Widget> setDeck(String cardContext) {
+    if (cardContext == '교회') {
+      return MeetInChurch;
+    } else
+      return Break_It_1;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +91,7 @@ class _CardPageState extends State<CardPage> {
                 onPressed: () => controller.unswipe(),
               ),
               Text(
-                '/${cards.length}',
+                '/${cardCount}',
                 style: cardText(),
               )
             ],
@@ -90,8 +100,6 @@ class _CardPageState extends State<CardPage> {
       ),
     );
   }
-
-  void _swipe(int index) {}
 
   Widget CardEnd() {
     return SizedBox(
