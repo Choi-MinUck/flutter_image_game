@@ -177,6 +177,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+  wrapped_korean_text:
+    dependency: "direct main"
+    description:
+      name: wrapped_korean_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
 sdks:
   dart: ">=2.17.6 <3.0.0"
   flutter: ">=1.22.0"

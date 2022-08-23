@@ -31,6 +31,7 @@ dependencies:
     sdk: flutter
   appinio_swiper: ^1.0.3
   animated_text_kit: ^4.2.2
+  wrapped_korean_text: ^0.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

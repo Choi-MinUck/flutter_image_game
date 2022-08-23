@@ -4,6 +4,7 @@ import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_image_game/main.dart';
 import 'package:flutter_image_game/Pages/CardList.dart';
+import 'package:wrapped_korean_text/wrapped_korean_text.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({Key? key, required this.cardCount, required this.cardContent})
@@ -156,8 +157,8 @@ class _CardPageState extends State<CardPage> {
   }
 }
 
-Widget CardDeckButton3(String cardName, String cardContent) {
-  String cardPath = 'assets/images/${cardName}.png';
+Widget CardDeckButton3(String cardContent) {
+  String cardPath = 'assets/images/card.png';
   String str = cardContent;
 
   return Container(
@@ -168,7 +169,7 @@ Widget CardDeckButton3(String cardName, String cardContent) {
           height: 520,
           child: Stack(
             children: [
-              Image.asset('assets/images/${cardName}.png'),
+              Image.asset(cardPath),
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(40),
