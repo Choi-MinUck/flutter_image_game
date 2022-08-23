@@ -27,18 +27,30 @@ class _CardPageState extends State<CardPage> {
     return Scaffold(
       backgroundColor: const Color(0xFF2B2B31),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
-              height: 35, child: Image.asset('assets/images/exitButton.png')),
-          const SizedBox(
-            height: 5,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+            child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHome()),
+                  );
+                },
+                child: Image.asset('assets/images/exitButton.png')),
           ),
-          Text(
-            '주제',
-            style: cafe24w700White(24, 36),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '주제',
+                style: cafe24w700White(24, 36),
+              ),
+            ],
           ),
           const SizedBox(
             height: 10,
@@ -151,7 +163,7 @@ Widget CardDeckButton3(String cardName, String cardContent) {
               Image.asset('assets/images/${cardName}.png'),
               Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(25),
+                padding: EdgeInsets.all(40),
                 child: Text(
                   cardContent,
                   textAlign: TextAlign.center,

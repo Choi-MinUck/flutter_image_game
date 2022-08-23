@@ -29,7 +29,7 @@ class _countdownPageState extends State<CountdownPage> {
           animatedTexts: [
             ScaleAnimatedText(
               '브레이-킷\n타임',
-              duration: const Duration(milliseconds: 3000),
+              duration: const Duration(milliseconds: 2000),
               scalingFactor: 0.5,
               textAlign: TextAlign.center,
               textStyle: cafe24w700White(60, 90),
