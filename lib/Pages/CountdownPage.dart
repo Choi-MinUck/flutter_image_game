@@ -41,29 +41,29 @@ class _countdownPageState extends State<CountdownPage> {
           animatedTexts: [
             ScaleAnimatedText(
               '브레이-킷\n타임',
-              duration: const Duration(milliseconds: 2000),
-              scalingFactor: 0.5,
+              duration: const Duration(milliseconds: 1500),
+              scalingFactor: 1,
               textAlign: TextAlign.center,
               textStyle: cafe24w700White(60, 90),
             ),
             ScaleAnimatedText(
               '3',
-              duration: const Duration(milliseconds: 1000),
-              scalingFactor: 0.5,
+              duration: const Duration(milliseconds: 600),
+              scalingFactor: 1,
               textAlign: TextAlign.center,
               textStyle: cafe24w700White(600, 900),
             ),
             ScaleAnimatedText(
               '2',
-              duration: const Duration(milliseconds: 1000),
-              scalingFactor: 0.5,
+              duration: const Duration(milliseconds: 600),
+              scalingFactor: 1,
               textAlign: TextAlign.center,
               textStyle: cafe24w700White(600, 900),
             ),
             ScaleAnimatedText(
               '1',
-              duration: const Duration(milliseconds: 1000),
-              scalingFactor: 0.5,
+              duration: const Duration(milliseconds: 600),
+              scalingFactor: 1,
               textAlign: TextAlign.center,
               textStyle: cafe24w700White(600, 900),
             ),
@@ -72,7 +72,7 @@ class _countdownPageState extends State<CountdownPage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CardPage(
+                    builder: (context) => new CardPage(
                           deckIndex: this.deckIndex,
                           cardCategory: this.cardCategory,
                         )));
