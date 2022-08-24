@@ -67,6 +67,9 @@ flutter:
   - family: Cafe24Ohsquare
     fonts:
       - asset: fonts/Cafe24Ohsquare.ttf
+  - family: Jua
+    fonts:
+      - asset: fonts/BMJUA_ttf.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

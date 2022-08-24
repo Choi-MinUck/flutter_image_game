@@ -36,26 +36,43 @@ class _MyHomeState extends State<MyHome> {
         backgroundColor: Color(0xff2B2B31),
         body: ListView(
           children: [
-            Container(child: Image.asset('assets/images/브레이-킷.png')),
             Container(
-              height: 1000,
-              child: GridView.count(
-                primary: false,
-                padding: const EdgeInsets.all(20),
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                crossAxisCount: 2,
-                childAspectRatio: 160 / 240,
-                children: <Widget>[
-                  homePageDeckButton1(cardCategory: '브레이킷1'),
-                  homePageDeckButton1(cardCategory: '브레이킷2'),
-                  homePageDeckButton1(cardCategory: '대학생활'),
-                  homePageDeckButton1(cardCategory: '연애'),
-                  homePageDeckButton1(cardCategory: '술자리1'),
-                  homePageDeckButton1(cardCategory: '술자리2'),
-                  homePageDeckButton1(cardCategory: '조선시대'),
-                  homePageDeckButton1(cardCategory: '동화'),
-                  homePageDeckButton1(cardCategory: '무인도'),
+                height: 120, child: Image.asset('assets/images/브레이-킷.png')),
+            Center(
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      homePageDeckButton1(cardCategory: '브레이킷1'),
+                      homePageDeckButton1(cardCategory: '브레이킷2'),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      homePageDeckButton1(cardCategory: '대학생활'),
+                      homePageDeckButton1(cardCategory: '연애'),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      homePageDeckButton1(cardCategory: '술자리1'),
+                      homePageDeckButton1(cardCategory: '술자리2'),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      homePageDeckButton1(cardCategory: '조선시대'),
+                      homePageDeckButton1(cardCategory: '동화'),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                 ],
               ),
             ),
@@ -96,7 +113,7 @@ class homePageDeckButton1 extends StatelessWidget {
                 Column(
                   children: [
                     Expanded(
-                        flex: 4,
+                        flex: 2,
                         child: Center(
                           child: Text(
                             cardCategory,
@@ -104,7 +121,7 @@ class homePageDeckButton1 extends StatelessWidget {
                             style: homePageDeck(),
                           ),
                         )),
-                    Expanded(flex: 3, child: Container())
+                    Expanded(flex: 1, child: Container())
                   ],
                 ),
               ],

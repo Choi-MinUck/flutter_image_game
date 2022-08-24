@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 TextStyle homePageDeck() {
   return TextStyle(
-    fontSize: 30,
+    fontSize: 26,
     fontFamily: 'Cafe24Ohsquare',
     fontWeight: FontWeight.w700,
-    height: 45 / 30,
+    height: 45 / 26,
     color: Color(0xffFFFFFF),
   );
 }
@@ -37,5 +37,15 @@ TextStyle cafe24w700White(double size, double height) {
     fontWeight: FontWeight.w700,
     height: height / size,
     color: Color(0xffFFFFFF),
+  );
+}
+
+TextStyle juaw400CustomColor(double size, double height, int color) {
+  return TextStyle(
+    fontSize: size,
+    fontFamily: 'Jua',
+    fontWeight: FontWeight.w400,
+    height: height / size,
+    color: Color(color),
   );
 }
