@@ -77,6 +77,7 @@ class CardCategoryButton extends StatelessWidget {
 
   final String cardCategory;
   final String buttonIndex;
+  late int deckIndex = int.parse(buttonIndex) - 1;
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +98,7 @@ class CardCategoryButton extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => GameSetPage(
                                     cardCategory: cardCategory,
+                                    deckIndex: this.deckIndex,
                                   )),
                         );
                       },

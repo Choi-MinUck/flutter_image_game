@@ -8,21 +8,21 @@ import 'package:wrapped_korean_text/wrapped_korean_text.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage(
-      {Key? key, required this.cardCount, required this.cardCategory})
+      {Key? key, required this.deckIndex, required this.cardCategory})
       : super(key: key);
-  final int cardCount;
+  final int deckIndex;
   final String cardCategory;
 
   State<CardPage> createState() => _CardPageState(
-      cardCount: this.cardCount, cardCategory: this.cardCategory);
+      deckIndex: this.deckIndex, cardCategory: this.cardCategory);
 }
 
 class _CardPageState extends State<CardPage> {
   _CardPageState(
-      {Key? key, required this.cardCount, required this.cardCategory});
+      {Key? key, required this.deckIndex, required this.cardCategory});
 
   final AppinioSwiperController controller = AppinioSwiperController();
-  late int cardCount;
+  late int deckIndex;
   late String cardCategory;
 
   late List<Widget> cards = setDeck(cardCategory);
@@ -31,7 +31,7 @@ class _CardPageState extends State<CardPage> {
     if (cardCategory == '교회') {
       return MeetInChurch;
     } else
-      return Break_It_1;
+      return Break_It[0];
   }
 
   @override
@@ -93,7 +93,7 @@ class _CardPageState extends State<CardPage> {
                 onPressed: () => controller.unswipe(),
               ),
               Text(
-                '/${cardCount}',
+                '/10',
                 style: cardText(),
               )
             ],

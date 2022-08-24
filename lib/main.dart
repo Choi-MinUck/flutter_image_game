@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_game/Pages/GameSetPage.dart';
-import 'package:flutter_image_game/Pages/cardCategoryLevel.dart';
+import 'package:flutter_image_game/Pages/CardCategoryLevel.dart';
 import 'package:flutter_image_game/Theme/font.dart';
 import 'package:flutter_image_game/Pages/CardPage.dart';
 
