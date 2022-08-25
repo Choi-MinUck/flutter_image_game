@@ -470,7 +470,11 @@ class _CardPageState extends State<CardPage> {
           ),
           Stack(
             children: [
-              CardEnd(),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                child: CardEnd(),
+              ),
               SizedBox(
                   height: MediaQuery.of(context).size.height * 0.75,
                   child: Center(
@@ -478,13 +482,14 @@ class _CardPageState extends State<CardPage> {
                       controller: controller,
                       cards: setDeck(cardCategory),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 25),
+                          horizontal: 20, vertical: 20),
                     ),
                   )),
             ],
           ),
           CupertinoButton(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            padding: EdgeInsets.only(left: 30, bottom: 30),
+            // padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
             child: Image.asset('assets/images/unswipe.png'),
             onPressed: () => controller.unswipe(),
           ),

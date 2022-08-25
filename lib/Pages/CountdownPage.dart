@@ -37,53 +37,51 @@ class _countdownPageState extends State<CountdownPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xff2B2B31),
-        body: Align(
-          alignment: Alignment(0, 0),
-          child: SizedBox(
-              width: 337,
-              height: 551,
-              child: Stack(children: [
-                Image.asset("assets/images/countdowncard.png"),
-                Center(
-                  child: AnimatedTextKit(
-                    pause: Duration(microseconds: 0),
-                    totalRepeatCount: 1,
-                    animatedTexts: [
-                      ScaleAnimatedText(
-                        '3',
-                        duration: const Duration(milliseconds: 600),
-                        scalingFactor: 1,
-                        textAlign: TextAlign.center,
-                        textStyle: cafe24w700White(400, 600),
-                      ),
-                      ScaleAnimatedText(
-                        '2',
-                        duration: const Duration(milliseconds: 600),
-                        scalingFactor: 1,
-                        textAlign: TextAlign.center,
-                        textStyle: cafe24w700White(400, 600),
-                      ),
-                      ScaleAnimatedText(
-                        '1',
-                        duration: const Duration(milliseconds: 600),
-                        scalingFactor: 1,
-                        textAlign: TextAlign.center,
-                        textStyle: cafe24w700White(400, 600),
-                      ),
-                    ],
-                    onFinished: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => new CardPage(
-                                    deckIndex: this.deckIndex,
-                                    cardCategory: this.cardCategory,
-                                    cardPageTitle: this.cardPageTitle,
-                                  )));
-                    },
+        body: Stack(children: <Widget>[
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/ready.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Align(
+              alignment: const Alignment(0, -0.16),
+              child: AnimatedTextKit(
+                pause: const Duration(microseconds: 0),
+                totalRepeatCount: 1,
+                animatedTexts: [
+                  ScaleAnimatedText(
+                    '3',
+                    duration: const Duration(milliseconds: 750),
+                    scalingFactor: 1,
+                    textStyle: cafe24w700White(400, 600),
                   ),
-                )
-              ])),
-        ));
+                  ScaleAnimatedText(
+                    '2',
+                    duration: const Duration(milliseconds: 750),
+                    scalingFactor: 1,
+                    textStyle: cafe24w700White(400, 600),
+                  ),
+                  ScaleAnimatedText(
+                    '1',
+                    duration: const Duration(milliseconds: 750),
+                    scalingFactor: 1,
+                    textStyle: cafe24w700White(400, 600),
+                  ),
+                ],
+                onFinished: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CardPage(
+                                deckIndex: deckIndex,
+                                cardCategory: cardCategory,
+                                cardPageTitle: cardPageTitle,
+                              )));
+                },
+              )),
+        ]));
   }
 }

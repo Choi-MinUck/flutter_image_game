@@ -148,11 +148,26 @@ class CardCategoryButton extends StatelessWidget {
                     fit: BoxFit.fill),
                 Center(
                   child: Text(
-                    '$cardCategory-$buttonIndex',
+                    '${cardCategory}  ${buttonIndex}탄',
                     textAlign: TextAlign.center,
                     style: cafe24w700White(24, 36),
                   ),
                 ),
+                Center(
+                  child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GameSetPage(
+                                    cardCategory: this.cardCategory,
+                                    deckIndex: this.deckIndex,
+                                    cardPageTitle: this.cardPageTitle,
+                                  )),
+                        );
+                      },
+                      child: Container()),
+                )
               ],
             ),
           ),

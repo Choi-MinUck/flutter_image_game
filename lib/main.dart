@@ -165,6 +165,21 @@ class homePageDeckButton1 extends StatelessWidget {
                     Expanded(flex: 1, child: Container())
                   ],
                 ),
+                Center(
+                  child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CardCategoryLevel(
+                                    cardCategory: this.cardCategory,
+                                    miniTitle: this.miniTitle,
+                                    cardPageTitle: this.cardPageTitle,
+                                  )),
+                        );
+                      },
+                      child: Container()),
+                )
               ],
             ),
           ),

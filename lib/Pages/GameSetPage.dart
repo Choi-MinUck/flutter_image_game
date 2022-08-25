@@ -33,7 +33,7 @@ class _GameSetPageState extends State<GameSetPage> {
   final int deckIndex;
   final String cardPageTitle;
 
-  String imagePath = "assets/images/startbutton.png";
+  String imagePath = "assets/images/startbutton.gif";
 
   @override
   Widget build(BuildContext context) {
