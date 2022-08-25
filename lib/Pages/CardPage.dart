@@ -442,11 +442,8 @@ class _CardPageState extends State<CardPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 10,
-          ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+            padding: const EdgeInsets.only(top: 30, bottom: 0, left: 30),
             child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -488,7 +485,7 @@ class _CardPageState extends State<CardPage> {
             ],
           ),
           CupertinoButton(
-            padding: EdgeInsets.only(left: 30, bottom: 30),
+            padding: EdgeInsets.only(left: 30, bottom: 15),
             // padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
             child: Image.asset('assets/images/unswipe.png'),
             onPressed: () => controller.unswipe(),
