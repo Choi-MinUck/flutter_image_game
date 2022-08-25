@@ -46,12 +46,12 @@ class _MyHomeState extends State<MyHome> {
                     children: [
                       homePageDeckButton1(
                         cardCategory: '브레이킷1',
-                        miniTitle: '이 얼음 같은 분위기… 깨고 싶다 브레이킷 브레이킷',
+                        miniTitle: '이 얼음 같은 분위기… 깨고 싶다\n브레이킷 브레이킷',
                         cardPageTitle: '브레이킷1',
                       ),
                       homePageDeckButton1(
                         cardCategory: '브레이킷2',
-                        miniTitle: '얼음은 다 녹았다!! 신나게 즐겨볼까?',
+                        miniTitle: '얼음은 다 녹았다!!\n신나게 즐겨볼까?',
                         cardPageTitle: '브레이킷2',
                       ),
                     ],
@@ -62,7 +62,7 @@ class _MyHomeState extends State<MyHome> {
                     children: [
                       homePageDeckButton1(
                         cardCategory: '대학생활',
-                        miniTitle: '아무리 학생 때가 행복하다지만, 종강 마렵다…',
+                        miniTitle: '아무리 학생 때가 행복하다지만,\n종강 마렵다…',
                         cardPageTitle: '대학생활',
                       ),
                       homePageDeckButton1(
@@ -78,12 +78,12 @@ class _MyHomeState extends State<MyHome> {
                     children: [
                       homePageDeckButton1(
                         cardCategory: '술과 함께1',
-                        miniTitle: '술자리가 허전할 때 술안주로 딱!',
+                        miniTitle: '술자리가 허전할 때\n술안주로 딱!',
                         cardPageTitle: '술과 함께1',
                       ),
                       homePageDeckButton1(
                         cardCategory: '술과 함께2',
-                        miniTitle: '사장님! 여기 소주 3병 추가요',
+                        miniTitle: '사장님!\n여기 소주 3병 추가요',
                         cardPageTitle: '술과 함께2',
                       ),
                     ],
@@ -94,12 +94,12 @@ class _MyHomeState extends State<MyHome> {
                     children: [
                       homePageDeckButton1(
                         cardCategory: '조선시대',
-                        miniTitle: '백 투 더 조선! 조선시대에 태어났다면?',
+                        miniTitle: '백 투 더 조선!\n조선시대에 태어났다면?',
                         cardPageTitle: '조선시대에 태어났다면?',
                       ),
                       homePageDeckButton1(
                         cardCategory: '동화',
-                        miniTitle: '유명 동화의 주인공이 된다면? 그런데 동화 내용이 좀 이상하다…!',
+                        miniTitle: '유명 동화의 주인공이 된다면?\n그런데 동화 내용이 좀 이상하다…!',
                         cardPageTitle: '유명 동화의 주인공이 된다면?',
                       ),
                     ],
