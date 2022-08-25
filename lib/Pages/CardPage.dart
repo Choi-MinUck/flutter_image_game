@@ -7,22 +7,32 @@ import 'package:wrapped_korean_text/wrapped_korean_text.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage(
-      {Key? key, required this.deckIndex, required this.cardCategory})
+      {Key? key,
+      required this.deckIndex,
+      required this.cardCategory,
+      required this.cardPageTitle})
       : super(key: key);
   final int deckIndex;
   final String cardCategory;
+  final String cardPageTitle;
 
   State<CardPage> createState() => _CardPageState(
-      deckIndex: this.deckIndex, cardCategory: this.cardCategory);
+      deckIndex: this.deckIndex,
+      cardCategory: this.cardCategory,
+      cardPageTitle: this.cardPageTitle);
 }
 
 class _CardPageState extends State<CardPage> {
   _CardPageState(
-      {Key? key, required this.deckIndex, required this.cardCategory});
+      {Key? key,
+      required this.deckIndex,
+      required this.cardCategory,
+      required this.cardPageTitle});
 
   final AppinioSwiperController controller = AppinioSwiperController();
   late int deckIndex;
   late String cardCategory;
+  final String cardPageTitle;
 
 //브레이킷1
   late List<List<Widget>> Break_It_1 = [
@@ -450,7 +460,7 @@ class _CardPageState extends State<CardPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$cardCategory-${deckIndex + 1}',
+                cardPageTitle,
                 style: cafe24w700White(24, 36),
               ),
             ],
@@ -497,6 +507,7 @@ class _CardPageState extends State<CardPage> {
                 children: [
                   Image.asset('assets/images/cardEnd.png'),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: 100,
@@ -512,19 +523,15 @@ class _CardPageState extends State<CardPage> {
                       ),
                       Container(
                         alignment: Alignment.center,
-                        child: TextButton(
-                            onPressed: () {
+                        child: InkWell(
+                            onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => MyHome()),
+                                    builder: (context) => new MyHome()),
                               );
                             },
-                            child: Text(
-                              '홈으로 돌아가기',
-                              textAlign: TextAlign.center,
-                              style: cardText(),
-                            )),
+                            child: Image.asset('assets/images/backToHome.png')),
                       ),
                     ],
                   ),

@@ -5,22 +5,34 @@ import 'package:flutter_image_game/Theme/font.dart';
 
 class GameSetPage extends StatefulWidget {
   const GameSetPage(
-      {Key? key, required this.cardCategory, required this.deckIndex})
+      {Key? key,
+      required this.cardCategory,
+      required this.deckIndex,
+      required this.cardPageTitle})
       : super(key: key);
 
   final String cardCategory;
   final int deckIndex;
+  final String cardPageTitle;
+
   @override
   State<GameSetPage> createState() => _GameSetPageState(
-      cardCategory: this.cardCategory, deckIndex: this.deckIndex);
+      cardCategory: this.cardCategory,
+      deckIndex: this.deckIndex,
+      cardPageTitle: this.cardPageTitle);
 }
 
 class _GameSetPageState extends State<GameSetPage> {
   _GameSetPageState(
-      {Key? key, required this.cardCategory, required this.deckIndex});
+      {Key? key,
+      required this.cardCategory,
+      required this.deckIndex,
+      required this.cardPageTitle});
 
   final String cardCategory;
   final int deckIndex;
+  final String cardPageTitle;
+
   String imagePath = "assets/images/startbutton.png";
 
   @override
@@ -62,6 +74,7 @@ class _GameSetPageState extends State<GameSetPage> {
                             builder: (context) => CountdownPage(
                                   deckIndex: this.deckIndex,
                                   cardCategory: this.cardCategory,
+                                  cardPageTitle: this.cardPageTitle,
                                 )),
                       );
                     },

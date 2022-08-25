@@ -44,32 +44,64 @@ class _MyHomeState extends State<MyHome> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      homePageDeckButton1(cardCategory: '브레이킷1'),
-                      homePageDeckButton1(cardCategory: '브레이킷2'),
+                      homePageDeckButton1(
+                        cardCategory: '브레이킷1',
+                        miniTitle: '이 얼음 같은 분위기… 깨고 싶다 브레이킷 브레이킷',
+                        cardPageTitle: '브레이킷1',
+                      ),
+                      homePageDeckButton1(
+                        cardCategory: '브레이킷2',
+                        miniTitle: '얼음은 다 녹았다!! 신나게 즐겨볼까?',
+                        cardPageTitle: '브레이킷2',
+                      ),
                     ],
                   ),
                   Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      homePageDeckButton1(cardCategory: '대학생활'),
-                      homePageDeckButton1(cardCategory: '연애'),
+                      homePageDeckButton1(
+                        cardCategory: '대학생활',
+                        miniTitle: '아무리 학생 때가 행복하다지만, 종강 마렵다…',
+                        cardPageTitle: '대학생활',
+                      ),
+                      homePageDeckButton1(
+                        cardCategory: '연애생활',
+                        miniTitle: '이 사람이 연애를 한다면?\n근데 너 연애 해봤니…?',
+                        cardPageTitle: '연애생활',
+                      ),
                     ],
                   ),
                   Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      homePageDeckButton1(cardCategory: '술자리1'),
-                      homePageDeckButton1(cardCategory: '술자리2'),
+                      homePageDeckButton1(
+                        cardCategory: '술과 함께1',
+                        miniTitle: '술자리가 허전할 때 술안주로 딱!',
+                        cardPageTitle: '술과 함께1',
+                      ),
+                      homePageDeckButton1(
+                        cardCategory: '술과 함께2',
+                        miniTitle: '사장님! 여기 소주 3병 추가요',
+                        cardPageTitle: '술과 함께2',
+                      ),
                     ],
                   ),
                   Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      homePageDeckButton1(cardCategory: '조선시대'),
-                      homePageDeckButton1(cardCategory: '동화'),
+                      homePageDeckButton1(
+                        cardCategory: '조선시대',
+                        miniTitle: '백 투 더 조선! 조선시대에 태어났다면?',
+                        cardPageTitle: '조선시대에 태어났다면?',
+                      ),
+                      homePageDeckButton1(
+                        cardCategory: '동화',
+                        miniTitle: '유명 동화의 주인공이 된다면? 그런데 동화 내용이 좀 이상하다…!',
+                        cardPageTitle: '유명 동화의 주인공이 된다면?',
+                      ),
                     ],
                   ),
                   Padding(padding: EdgeInsets.symmetric(vertical: 10)),
@@ -82,9 +114,16 @@ class _MyHomeState extends State<MyHome> {
 }
 
 class homePageDeckButton1 extends StatelessWidget {
-  homePageDeckButton1({Key? key, required this.cardCategory}) : super(key: key);
+  homePageDeckButton1(
+      {Key? key,
+      required this.cardCategory,
+      required this.miniTitle,
+      required this.cardPageTitle})
+      : super(key: key);
 
   String cardCategory;
+  String miniTitle;
+  String cardPageTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +143,9 @@ class homePageDeckButton1 extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => CardCategoryLevel(
-                                    cardCategory: cardCategory,
+                                    cardCategory: this.cardCategory,
+                                    miniTitle: this.miniTitle,
+                                    cardPageTitle: this.cardPageTitle,
                                   )),
                         );
                       },
